@@ -19,7 +19,7 @@ int main()
 	return 0;
 }
 
-unsigned long long fib(int n)										// Сама фунция нахождения числа Фибоначчи
+unsigned long long fib(int n)						// Сама фунция нахождения числа Фибоначчи
 {
 	unsigned long long** p = new unsigned long long*[2];
 	p[0] = new unsigned long long[2];
@@ -39,7 +39,7 @@ unsigned long long fib(int n)										// Сама фунция нахожден
 
 unsigned long long** powm(unsigned long long** a, int n, int p)		// Функция возведения в степень квадратных матриц
 {
-	unsigned long long** b = new unsigned long long*[n];			// Инициализация единичной матрицы
+	unsigned long long** b = new unsigned long long*[n];		// Инициализация единичной матрицы
 	for (int i(0); i < n; ++i) {
 		b[i] = new unsigned long long[n];
 		for (int j(0); j < n; ++j)
@@ -47,7 +47,7 @@ unsigned long long** powm(unsigned long long** a, int n, int p)		// Функци
 	}
 	for (int i(0); i < n; ++i)
 		b[i][i] = 1;
-	while (p)														// Бинарное возведение в степень
+	while (p)							// Бинарное возведение в степень
 	{
 		if (p & 1)
 			b = gen(b, a, n, n, n);
@@ -59,7 +59,7 @@ unsigned long long** powm(unsigned long long** a, int n, int p)		// Функци
 
 unsigned long long** gen(unsigned long long** a, unsigned long long** b, int m, int n, int k)
 {
-	unsigned long long** c = new unsigned long long*[m];			// Функция умножения матриц
+	unsigned long long** c = new unsigned long long*[m];		// Функция умножения матриц
 	for (int i(0); i < m; ++i)	c[i] = new unsigned long long[k];
 	for (int i(0); i < m; ++i) {
 		for (int j(0); j < k; ++j) {
